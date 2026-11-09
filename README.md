@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ChessMaster
 
-## Getting Started
+A polished chess game with a premium gaming UI, AI and local play, dashboards, daily challenges, and practice tools.
 
-First, run the development server:
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## GitHub Pages deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project is configured for static export so it can be published to GitHub Pages.
 
-## Learn More
+1. Create a GitHub repository.
+2. Add the remote:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+git remote add origin https://github.com/<your-user>/<your-repo>.git
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Commit and push:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+git add .
+git commit -m "Initial ChessMaster release"
+git push -u origin master
+```
 
-## Deploy on Vercel
+4. In GitHub, enable GitHub Pages for the repository and select the GitHub Actions deployment workflow.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deploy workflow
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The repository already contains a GitHub Actions workflow in `.github/workflows/deploy.yml` to build the static output and publish it to GitHub Pages.
+
+## Notes
+
+- The app is optimized for static export using Next.js `output: "export"`.
+- This keeps it compatible with GitHub Pages hosting for a client-side chess experience.

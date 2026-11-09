@@ -1,9 +1,15 @@
 import type { NextConfig } from "next";
 
+const repoPath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const nextConfig: NextConfig = {
-  /* config options here */
-  cacheComponents: true,
-  partialPrefetching: true,
+  output: "export",
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
+  basePath: repoPath,
+  assetPrefix: repoPath,
   turbopack: {
     rules: {
       "*.css": {
